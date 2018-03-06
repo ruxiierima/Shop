@@ -125,6 +125,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\DbInitializer.cs" />
+    <Compile Include="Data\IRepositories\IProductRepository.cs" />
+    <Compile Include="Data\IRepositories\IRepository.cs" />
+    <Compile Include="Data\IRepositories\IUserRepository.cs" />
+    <Compile Include="Data\Repositories\ProductRepository.cs" />
+    <Compile Include="Data\Repositories\Repository.cs" />
+    <Compile Include="Data\Repositories\UserRepository.cs" />
     <Compile Include="Data\ShopContext.cs" />
     <Compile Include="Data\DesignTimeDbContextFactory.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -194,5 +200,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
