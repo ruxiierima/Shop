@@ -158,6 +158,10 @@
     <Compile Include="Migrations\20180306205117_OneToOneUserAddress3.designer.cs">
       <DependentUpon>20180306205117_OneToOneUserAddress3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20180306210842_OneToOneProductProductCategory.cs" />
+    <Compile Include="Migrations\20180306210842_OneToOneProductProductCategory.designer.cs">
+      <DependentUpon>20180306210842_OneToOneProductProductCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ShopContextModelSnapshot.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Order.cs" />

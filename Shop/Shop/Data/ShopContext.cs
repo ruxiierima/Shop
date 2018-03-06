@@ -34,11 +34,19 @@ namespace Shop.Data
 
             modelBuilder.Entity<Address>()
                 .HasKey(a => a.UserId);
+            modelBuilder.Entity<ProductCategory>()
+                .HasKey(p => p.ProductId);
             //One to one User -> Address
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Address)
                 .WithOne(ad => ad.User)
                 .HasForeignKey<Address>(ad => ad.UserId);
+
+            //One to one Product -> ProductCategory
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.ProductCategory)
+                .WithOne(c => c.Product)
+                .HasForeignKey<ProductCategory>(c => c.ProductId);
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

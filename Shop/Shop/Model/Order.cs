@@ -12,7 +12,7 @@ namespace Shop.Model
         {
             Products = new List<Product>();
         }
-        public int ID { get; set; }
+        public int Id { get; set; }
         public List<Product> Products { get; set; }
         
 
