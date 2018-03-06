@@ -142,6 +142,22 @@
     <Compile Include="Migrations\20180306165214_AddedProductTable.designer.cs">
       <DependentUpon>20180306165214_AddedProductTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20180306200101_Migration3.cs" />
+    <Compile Include="Migrations\20180306200101_Migration3.designer.cs">
+      <DependentUpon>20180306200101_Migration3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180306202720_OneToOneUserAddress.cs" />
+    <Compile Include="Migrations\20180306202720_OneToOneUserAddress.designer.cs">
+      <DependentUpon>20180306202720_OneToOneUserAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180306204545_OneToOneUserAddress2.cs" />
+    <Compile Include="Migrations\20180306204545_OneToOneUserAddress2.designer.cs">
+      <DependentUpon>20180306204545_OneToOneUserAddress2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180306205117_OneToOneUserAddress3.cs" />
+    <Compile Include="Migrations\20180306205117_OneToOneUserAddress3.designer.cs">
+      <DependentUpon>20180306205117_OneToOneUserAddress3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ShopContextModelSnapshot.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Order.cs" />

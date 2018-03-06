@@ -29,6 +29,16 @@ namespace Shop.Data
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Product>().ToTable("Product");
             modelBuilder.Entity<Order>().ToTable("Order");
+            modelBuilder.Entity<ProductCategory>().ToTable("ProductCategory");
+            modelBuilder.Entity<Address>().ToTable("Address");
+
+            modelBuilder.Entity<Address>()
+                .HasKey(a => a.UserId);
+            //One to one User -> Address
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Address)
+                .WithOne(ad => ad.User)
+                .HasForeignKey<Address>(ad => ad.UserId);
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

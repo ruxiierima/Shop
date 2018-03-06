@@ -11,9 +11,10 @@ using System;
 namespace Shop.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    partial class ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20180306200101_Migration3")]
+    partial class Migration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,9 +23,8 @@ namespace Shop.Migrations
 
             modelBuilder.Entity("Shop.Model.Address", b =>
                 {
-                    b.Property<int>("UserId");
-
-                    b.Property<int>("AddressForeignKey");
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("City");
 
@@ -36,7 +36,7 @@ namespace Shop.Migrations
 
                     b.Property<string>("Street");
 
-                    b.HasKey("UserId");
+                    b.HasKey("ID");
 
                     b.ToTable("Adress");
                 });
@@ -48,7 +48,7 @@ namespace Shop.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Shop.Model.Product", b =>
@@ -72,7 +72,7 @@ namespace Shop.Migrations
 
                     b.HasIndex("ProductCategoryID");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Shop.Model.ProductCategory", b =>
@@ -86,13 +86,15 @@ namespace Shop.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("ProductCategory");
+                    b.ToTable("ProductCatecories");
                 });
 
             modelBuilder.Entity("Shop.Model.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("AddressID");
 
                     b.Property<string>("Email");
 
@@ -106,15 +108,9 @@ namespace Shop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
-                });
+                    b.HasIndex("AddressID");
 
-            modelBuilder.Entity("Shop.Model.Address", b =>
-                {
-                    b.HasOne("Shop.Model.User", "User")
-                        .WithOne("Address")
-                        .HasForeignKey("Shop.Model.Address", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Shop.Model.Product", b =>
@@ -126,6 +122,13 @@ namespace Shop.Migrations
                     b.HasOne("Shop.Model.ProductCategory", "ProductCategory")
                         .WithMany()
                         .HasForeignKey("ProductCategoryID");
+                });
+
+            modelBuilder.Entity("Shop.Model.User", b =>
+                {
+                    b.HasOne("Shop.Model.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressID");
                 });
 #pragma warning restore 612, 618
         }
