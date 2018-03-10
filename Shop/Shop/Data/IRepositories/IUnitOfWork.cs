@@ -12,6 +12,7 @@ namespace Shop.Data.IRepositories
     {
         UserRepository Users { get; }
         ProductRepository Products { get; }
+        OrderRepository Orders { get; }
         int Complete();
     }
 }
