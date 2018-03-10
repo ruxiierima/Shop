@@ -125,11 +125,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\DbInitializer.cs" />
+    <Compile Include="Data\IRepositories\IAddressRepository.cs" />
     <Compile Include="Data\IRepositories\IOrderRepository.cs" />
     <Compile Include="Data\IRepositories\IProductRepository.cs" />
     <Compile Include="Data\IRepositories\IRepository.cs" />
     <Compile Include="Data\IRepositories\IUnitOfWork.cs" />
     <Compile Include="Data\IRepositories\IUserRepository.cs" />
+    <Compile Include="Data\Repositories\AddressRepository.cs" />
     <Compile Include="Data\Repositories\OrderRepository.cs" />
     <Compile Include="Data\Repositories\ProductRepository.cs" />
     <Compile Include="Data\Repositories\Repository.cs" />
