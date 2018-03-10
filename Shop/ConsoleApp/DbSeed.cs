@@ -10,7 +10,7 @@ namespace ConsoleApp
 {
     public class DbSeed
     {
-        void Seed()
+        public void Seed()
         {
             using (var UnitOfWork = new UnitOfWork(new ShopContext()))
             {

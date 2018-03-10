@@ -16,12 +16,16 @@ namespace ConsoleApp
         {
             using (var UnitOfWork = new UnitOfWork(new ShopContext()))
             {
-                Console.WriteLine("--------------------------");
+                Console.WriteLine("1-Seed the database, 2-Delete all users");
                 int k = Convert.ToInt32(Console.ReadLine());
                 if (k == 1)
                 {
-                    User user = new User { Username = "Dandan", Fullname = "Dan Chiorean", Email = "chiorean@gmail.com", Password = "213fd", PhoneNumber = "12344321" };
-                    UnitOfWork.Users.Add(user);
+                    DbSeed seed = new DbSeed();
+                    seed.Seed();
+                }else if (k == 2)
+                {
+                    var users = UnitOfWork.Users.GetAll();
+                    UnitOfWork.Users.RemoveRange(users);
                     UnitOfWork.Complete();
                 }
             }
