@@ -18,14 +18,19 @@ namespace Shop.Data
             _context = context;
             Users = new UserRepository(_context);
             Products = new ProductRepository(_context);
+            Orders = new OrderRepository(_context);
 
         }
         public IUserRepository Users { get; set; }
         public IProductRepository Products { get; set; }
+        public IOrderRepository Orders { get; set; }
 
         UserRepository IUnitOfWork.Users => throw new NotImplementedException();
 
         ProductRepository IUnitOfWork.Products => throw new NotImplementedException();
+
+        OrderRepository IUnitOfWork.Orders => throw new NotImplementedException();
+
 
         public int Complete()
         {
