@@ -16,6 +16,5 @@ namespace Shop.Model
         public string Region { get; set; }
         public string Street { get; set; }
         public string PostalCode { get; set; }
-        public int AddressForeignKey { get; set; }
     }
 }

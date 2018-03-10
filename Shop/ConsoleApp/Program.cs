@@ -25,7 +25,9 @@ namespace ConsoleApp
                 }else if (k == 2)
                 {
                     var users = UnitOfWork.Users.GetAll();
+                    var addresses = UnitOfWork.Addresses.GetAll();
                     UnitOfWork.Users.RemoveRange(users);
+                    UnitOfWork.Addresses.RemoveRange(addresses);
                     UnitOfWork.Complete();
                 }
             }
