@@ -30,11 +30,7 @@ namespace ConsoleApp
                 new User { Username="Festila007", Fullname="Celement Festila", Email="festila@mail.com",Password="1234",PhoneNumber="012394923", Address=addresses[3]  }
                 };
 
-                foreach(Address address in addresses)
-                {
-                    //TODO: To make a repository for Address
-                   // UnitOfWork.
-                }
+                
 
                 foreach(User user in users)
                 {
