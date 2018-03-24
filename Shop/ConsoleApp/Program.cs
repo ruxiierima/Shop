@@ -29,6 +29,7 @@ namespace ConsoleApp
                     UnitOfWork.Users.RemoveRange(users);
                     UnitOfWork.Addresses.RemoveRange(addresses);
                     UnitOfWork.Complete();
+                   
                 }
             }
         }
